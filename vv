@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ -f "/electra/jailbreakd" ]; then
+
+    echo "Applying patches for Electra Jailbreak."
+
+    if [ -L "/usr/lib/libCercube.dylib" ]; then
+        mv /usr/lib/libCercube.dylib /var/cercube_stashed/libCercube_tmp.dylib
+        mv /var/cercube_stashed/libCercube.dylib /usr/lib/libCercube.dylib
+        mv /var/cercube_stashed/libCercube_tmp.dylib /var/cercube_stashed/libCercube.dylib
+    fi
+
+fi
+
+exit 0
